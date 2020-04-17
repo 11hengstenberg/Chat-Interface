@@ -2,7 +2,7 @@
 #define DIALOG_H
 
 #include <QDialog>
-
+#include "ayuda.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dialog; }
 QT_END_NAMESPACE
