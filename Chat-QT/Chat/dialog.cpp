@@ -18,3 +18,4 @@ void Dialog::on_pushButton_clicked()
 {
     close();
 }
+
