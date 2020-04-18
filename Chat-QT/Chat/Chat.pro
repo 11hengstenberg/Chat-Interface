@@ -16,15 +16,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     ayuda.cpp \
+    chatgeneral.cpp \
+    chatprivado.cpp \
     main.cpp \
     dialog.cpp
 
 HEADERS += \
     ayuda.h \
+    chatgeneral.h \
+    chatprivado.h \
     dialog.h
 
 FORMS += \
     ayuda.ui \
+    chatgeneral.ui \
+    chatprivado.ui \
     dialog.ui \
     estado.ui \
     info.ui \

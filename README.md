@@ -1,32 +1,7 @@
-# Chat Interface
+To compiling, first install qt in the web-browser 
 
-Install Glade
+https://www.qt.io/download
 
-```
-sudo apt-get install glade 
-```
+Then, wait to install. NOTE: INSTALL ALL MODULES TO COMPILING
 
-Install Geany 
 
-```
-sudo apt install geany
- 
-```
-
-Search the file
-
-```
-cd ///
-
-```
-
-TO COMPILING
-
-```
- gcc -Wall -g -o /*ARCHIVO CON EL QUE GUARDAMOS EN GLADE*/ /*CODIGO EN C*/ `pkg-config --cflags --libs gtk+-3.0`
-
-```
-```
- ./"ARCHIVO CON EL QUE GUARDAMOS GLADE"
-
-```
