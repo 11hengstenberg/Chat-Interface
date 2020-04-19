@@ -1,0 +1,17 @@
+INPUT(
+./release\ayuda.o
+./release\cambioe.o
+./release\chatp.o
+./release\direct.o
+./release\info.o
+./release\main.o
+./release\menu.o
+./release\widget.o
+./release\moc_ayuda.o
+./release\moc_cambioe.o
+./release\moc_chatp.o
+./release\moc_direct.o
+./release\moc_info.o
+./release\moc_menu.o
+./release\moc_widget.o
+);

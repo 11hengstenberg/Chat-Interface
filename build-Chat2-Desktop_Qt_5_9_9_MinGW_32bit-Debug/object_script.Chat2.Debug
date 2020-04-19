@@ -1,0 +1,17 @@
+INPUT(
+./debug\ayuda.o
+./debug\cambioe.o
+./debug\chatp.o
+./debug\direct.o
+./debug\info.o
+./debug\main.o
+./debug\menu.o
+./debug\widget.o
+./debug\moc_ayuda.o
+./debug\moc_cambioe.o
+./debug\moc_chatp.o
+./debug\moc_direct.o
+./debug\moc_info.o
+./debug\moc_menu.o
+./debug\moc_widget.o
+);
