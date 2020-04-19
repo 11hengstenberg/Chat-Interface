@@ -616,6 +616,20 @@ aparecer en linea o no si asi lo quieres.</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
+              <object class="GtkAccelLabel" id="UsuariosConectados">
+                <property name="height_request">650</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Usuarios Conectados</property>
+                <property name="justify">center</property>
+                <property name="width_chars">30</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkAccelLabel" id="MensajesEntrada">
                 <property name="width_request">650</property>
                 <property name="height_request">650</property>
@@ -630,20 +644,6 @@ aparecer en linea o no si asi lo quieres.</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkAccelLabel" id="UsuariosConectados">
-                <property name="height_request">650</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Usuarios Conectados</property>
-                <property name="justify">center</property>
-                <property name="width_chars">30</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -667,6 +667,7 @@ aparecer en linea o no si asi lo quieres.</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="hexpand">True</property>
+                <signal name="clicked" handler="on_EnviarMensaje_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -681,6 +682,7 @@ aparecer en linea o no si asi lo quieres.</property>
                 <property name="halign">start</property>
                 <property name="hexpand">True</property>
                 <property name="show_emoji_icon">True</property>
+                <signal name="insert-text" handler="on_escritura_insert_text" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>

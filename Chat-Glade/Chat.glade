@@ -585,14 +585,17 @@ aparecer en linea o no si asi lo quieres.</property>
   </object>
   <object class="GtkWindow" id="chat_general">
     <property name="can_focus">False</property>
+    <property name="resizable">False</property>
     <property name="default_width">500</property>
     <property name="default_height">500</property>
-    <child>
+    <property name="destroy_with_parent">True</property>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
+        <property name="app_paintable">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
@@ -609,12 +612,41 @@ aparecer en linea o no si asi lo quieres.</property>
           </packing>
         </child>
         <child>
-          <object class="GtkAccelLabel">
-            <property name="width_request">-1</property>
+          <object class="GtkGrid">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="vexpand">True</property>
-            <property name="label" translatable="yes">Mensajes de entrada</property>
+            <child>
+              <object class="GtkAccelLabel" id="MensajesEntrada">
+                <property name="width_request">650</property>
+                <property name="height_request">650</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="vexpand">True</property>
+                <property name="label" translatable="yes">Mensajes de entrada</property>
+                <property name="use_markup">True</property>
+                <property name="width_chars">80</property>
+                <property name="single_line_mode">True</property>
+                <property name="max_width_chars">0</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkAccelLabel" id="UsuariosConectados">
+                <property name="height_request">650</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Usuarios Conectados</property>
+                <property name="justify">center</property>
+                <property name="width_chars">30</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -628,12 +660,14 @@ aparecer en linea o no si asi lo quieres.</property>
             <property name="can_focus">False</property>
             <property name="hexpand">True</property>
             <child>
-              <object class="GtkButton">
+              <object class="GtkButton" id="EnviarMensaje">
                 <property name="label" translatable="yes">Enviar Mensaje</property>
+                <property name="width_request">0</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="hexpand">True</property>
+                <signal name="clicked" handler="on_EnviarMensaje_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -641,12 +675,14 @@ aparecer en linea o no si asi lo quieres.</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
-                <property name="width_request">500</property>
+              <object class="GtkEntry" id="escritura">
+                <property name="width_request">650</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
                 <property name="hexpand">True</property>
+                <property name="show_emoji_icon">True</property>
+                <signal name="changed" handler="on_escritura_changed" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -665,21 +701,24 @@ aparecer en linea o no si asi lo quieres.</property>
   </object>
   <object class="GtkWindow" id="chat_privado">
     <property name="can_focus">False</property>
+    <property name="resizable">False</property>
     <property name="default_width">500</property>
     <property name="default_height">500</property>
-    <child>
+    <property name="destroy_with_parent">True</property>
+    <child type="titlebar">
       <placeholder/>
     </child>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
+        <property name="app_paintable">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Nombre Usuario
+            <property name="label" translatable="yes">Chat Privado
 </property>
           </object>
           <packing>
@@ -689,12 +728,41 @@ aparecer en linea o no si asi lo quieres.</property>
           </packing>
         </child>
         <child>
-          <object class="GtkAccelLabel">
-            <property name="width_request">-1</property>
+          <object class="GtkGrid">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="vexpand">True</property>
-            <property name="label" translatable="yes">Mensajes de entrada</property>
+            <child>
+              <object class="GtkAccelLabel" id="MensajesEntrada1">
+                <property name="width_request">650</property>
+                <property name="height_request">650</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="vexpand">True</property>
+                <property name="label" translatable="yes">Mensajes de entrada</property>
+                <property name="use_markup">True</property>
+                <property name="width_chars">80</property>
+                <property name="single_line_mode">True</property>
+                <property name="max_width_chars">0</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkAccelLabel" id="UsuariosConectados1">
+                <property name="height_request">650</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Usuarios Conectados</property>
+                <property name="justify">center</property>
+                <property name="width_chars">30</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -708,8 +776,9 @@ aparecer en linea o no si asi lo quieres.</property>
             <property name="can_focus">False</property>
             <property name="hexpand">True</property>
             <child>
-              <object class="GtkButton">
+              <object class="GtkButton" id="EnviarMensaje1">
                 <property name="label" translatable="yes">Enviar Mensaje</property>
+                <property name="width_request">0</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -721,12 +790,16 @@ aparecer en linea o no si asi lo quieres.</property>
               </packing>
             </child>
             <child>
-              <object class="GtkEntry">
-                <property name="width_request">500</property>
+              <object class="GtkEntry" id="escritura1">
+                <property name="width_request">650</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
                 <property name="hexpand">True</property>
+                <property name="secondary_icon_name">face-smile-symbolic</property>
+                <property name="secondary_icon_tooltip_text" translatable="yes">Insertar emoticono</property>
+                <property name="secondary_icon_tooltip_markup" translatable="yes">Insertar emoticono</property>
+                <property name="show_emoji_icon">True</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>

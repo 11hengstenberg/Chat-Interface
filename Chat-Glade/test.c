@@ -1,5 +1,8 @@
 #include <gtk/gtk.h>
 
+GtkWidget *escritura;
+GtkWidget *MensajesEntrada;
+
 int main(int argc, char *argv[])
 {
     GtkBuilder *gtkBuilder;
@@ -65,9 +68,28 @@ void on_chatGeneral_clicked(){
     chatG = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "chat_general"));
     gtk_builder_connect_signals(gtkBuilder, NULL);
     
-    g_object_unref(G_OBJECT(gtkBuilder));
+    /*Variable para la escritura*/
+    
+    escritura = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "escritura"));
+    MensajesEntrada = GTK_WIDGET(gtk_builder_get_object(gtkBuilder, "MensajesEntrada"));
+    
+	g_object_unref(G_OBJECT(gtkBuilder));
     gtk_widget_show(chatG);
     gtk_main();
+    
+}
+
+/*Funcion para el boton de enviar*/
+void on_EnviarMensaje_clicked(GtkEntry *e, GtkButton *b){
+	gtk_editable_delete_text (GTK_EDITABLE(escritura), 0, -1);
+	//gtk_insert_text(GTK_EDITABLE(escritura));
+}
+
+/*Funcion para guardar los que se escribe para enviar*/
+void on_escritura_insert_text(GtkEntry *e){
+	char tmp[128];
+	sprintf(tmp, "entry=%s", gtk_entry_get_text(e));
+	gtk_label_set_text(GTK_LABEL(MensajesEntrada), (const gchar*) tmp);
 }
 
 /*Funcion para salir del menu*/
