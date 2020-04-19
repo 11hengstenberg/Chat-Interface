@@ -240,23 +240,7 @@
     </font>
    </property>
   </widget>
-  <widget class="QListView" name="listView_2">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>20</y>
-     <width>541</width>
-     <height>471</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Agency FB</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="regresar">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -267,8 +251,8 @@
    </property>
    <property name="font">
     <font>
-     <family>Agency FB</family>
-     <pointsize>26</pointsize>
+     <family>DejaVu Sans</family>
+     <pointsize>22</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -277,7 +261,7 @@
     <string>REGRESAR</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
+  <widget class="QTextEdit" name="mensajeEntrada">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -324,7 +308,7 @@
     </palette>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="enviar">
    <property name="geometry">
     <rect>
      <x>680</x>
@@ -343,6 +327,19 @@
    </property>
    <property name="text">
     <string>&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="mensajes">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>30</y>
+     <width>531</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mensajes</string>
    </property>
   </widget>
  </widget>
